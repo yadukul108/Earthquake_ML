@@ -793,55 +793,6 @@ distance_attenuation_summary.csv
 
 These artifacts allow the deployed dashboard to provide analysis without retraining the model.
 
----
-
-# ⚙️ Running Locally
-
-## Clone
-
-```bash
-git clone https://github.com/UtkarshRode/earthquake-ground-motion-ml.git
-cd earthquake-ground-motion-ml
-```
-
-## Create environment
-
-```bash
-python -m venv .venv
-```
-
-### Windows
-
-```bash
-.venv\Scripts\activate
-```
-
-### Linux/macOS
-
-```bash
-source .venv/bin/activate
-```
-
-## Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-## Run Streamlit
-
-```bash
-streamlit run app/app.py
-```
-
-The application will normally be available at:
-
-```text
-http://localhost:8501
-```
-
----
-
 # 🔁 Reproducibility
 
 The repository separates:
