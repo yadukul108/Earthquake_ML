@@ -1,0 +1,33 @@
+{
+    "dataset": {
+        "total_observations": 2873369,
+        "train_observations": 2092176,
+        "validation_observations": 468857,
+        "test_observations": 312336,
+        "train_events": 28,
+        "validation_events": 6,
+        "test_events": 6
+    },
+    "best_classical_model": {
+        "model": "Elastic Net",
+        "grouped_cv_rmse": 0.247352,
+        "grouped_cv_mae": 0.207955,
+        "grouped_cv_r2": 0.731666
+    },
+    "best_deep_learning_model": {
+        "model": "PyTorch MLP",
+        "grouped_cv_rmse": 0.212796,
+        "grouped_cv_mae": 0.177651,
+        "grouped_cv_r2": 0.801543
+    },
+    "final_validation": {
+        "rmse": 0.1531840265724236,
+        "mae": 0.12966084745751288,
+        "r2": 0.9527188453501231
+    },
+    "final_unseen_test": {
+        "rmse": 0.3113074285859869,
+        "mae": 0.2800305410551364,
+        "r2": 0.6098822876179164
+    }
+}

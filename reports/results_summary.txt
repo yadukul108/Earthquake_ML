@@ -1,0 +1,40 @@
+
+FINAL RESULTS
+=============
+
+Dataset
+-------
+Total observations: 2,873,369
+Training observations: 2,092,176
+Validation observations: 468,857
+Test observations: 312,336
+
+Earthquake-level split
+----------------------
+Training earthquakes: 28
+Validation earthquakes: 6
+Test earthquakes: 6
+
+Grouped 5-Fold Cross-Validation
+--------------------------------
+Elastic Net:
+    RMSE = 0.247352
+    MAE  = 0.207955
+    R²   = 0.731666
+
+PyTorch MLP:
+    RMSE = 0.212796
+    MAE  = 0.177651
+    R²   = 0.801543
+
+Final Validation
+----------------
+RMSE = 0.153184
+MAE  = 0.129661
+R²   = 0.952719
+
+Final Unseen-Earthquake Test
+----------------------------
+RMSE = 0.311307
+MAE  = 0.280031
+R²   = 0.609882

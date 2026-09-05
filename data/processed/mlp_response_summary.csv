@@ -1,0 +1,5 @@
+Feature,Prediction_at_Low,Prediction_at_High,Change
+event_depth,-0.552371,0.15328214,0.7056532
+hypocentral_distance_km,-0.17253686,-1.1260291,-0.9534923
+Vs30_clean,-0.65206105,-0.26002866,0.39203238
+magnitude,-0.57968414,0.057771113,0.6374552

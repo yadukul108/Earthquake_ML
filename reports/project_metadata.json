@@ -1,0 +1,22 @@
+{
+    "project_name": "Earthquake Ground-Motion Prediction with Machine Learning and Deep Learning",
+    "target": "log(PGA)",
+    "dataset_observations": 2873369,
+    "earthquakes": 40,
+    "training_earthquakes": 28,
+    "validation_earthquakes": 6,
+    "test_earthquakes": 6,
+    "best_model": "PyTorch MLP",
+    "grouped_cv_rmse": 0.212796,
+    "grouped_cv_mae": 0.177651,
+    "grouped_cv_r2": 0.801543,
+    "final_test_rmse": 0.311307,
+    "final_test_mae": 0.280031,
+    "final_test_r2": 0.609882,
+    "interpretability": [
+        "Permutation feature importance",
+        "Model response analysis",
+        "Residual analysis",
+        "Spatial residual analysis"
+    ]
+}

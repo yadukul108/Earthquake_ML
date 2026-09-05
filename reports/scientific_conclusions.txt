@@ -1,0 +1,88 @@
+
+SCIENTIFIC CONCLUSIONS
+======================
+
+1. MODEL PERFORMANCE
+--------------------
+The PyTorch MLP achieved the strongest performance among the evaluated
+models during earthquake-grouped cross-validation.
+
+Grouped 5-fold CV:
+    RMSE = 0.2128
+    MAE  = 0.1777
+    R²   = 0.8015
+
+The best classical model, Elastic Net, achieved:
+
+    RMSE = 0.2474
+    MAE  = 0.2080
+    R²   = 0.7317
+
+2. UNSEEN-EARTHQUAKE GENERALIZATION
+------------------------------------
+On six completely unseen earthquakes, the final MLP achieved:
+
+    RMSE = 0.3113
+    MAE  = 0.2800
+    R²   = 0.6099
+
+Performance was strongly event-dependent. One test earthquake achieved
+R² close to 0.95, while several other events had negative event-level R².
+
+This indicates that generalization between earthquakes is substantially
+more difficult than prediction within the development distribution.
+
+3. EVENT-LEVEL BIAS
+-------------------
+The residual analysis showed systematic event-level offsets.
+
+Some earthquakes were consistently overpredicted, while others were
+consistently underpredicted.
+
+This suggests that source- or path-specific effects not represented by
+the current feature set contribute significantly to event-to-event
+variability.
+
+4. IMPORTANT FEATURES
+---------------------
+Permutation feature importance identified earthquake depth as the most
+influential feature, followed by the depth-distance interaction, log
+distance, and Vs30-related variables.
+
+This indicates that source geometry, propagation distance, and site
+conditions all contribute substantially to model predictions.
+
+5. PHYSICAL RESPONSE
+--------------------
+The model-response analysis showed:
+
+    - predicted ground motion decreases with increasing hypocentral
+      distance;
+    - predicted ground motion increases with magnitude;
+    - predictions are sensitive to Vs30;
+    - predictions are strongly sensitive to earthquake depth.
+
+These relationships are interpreted as learned model sensitivities rather
+than causal effects.
+
+6. LIMITATIONS
+--------------
+The main limitation is event-to-event generalization.
+
+The test results demonstrate that a model can perform strongly under
+grouped cross-validation while still exhibiting substantial performance
+variation on completely unseen earthquakes.
+
+Additional source, path, regional, or site-specific variables may be
+required to improve robustness.
+
+7. OVERALL CONCLUSION
+---------------------
+The project demonstrates that deep learning can learn meaningful
+relationships between earthquake source characteristics, propagation
+geometry, site conditions, and observed ground motion across a
+multi-million-observation dataset.
+
+The results also demonstrate the importance of earthquake-level
+validation when assessing generalization of ground-motion prediction
+models.

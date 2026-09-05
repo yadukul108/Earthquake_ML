@@ -1,0 +1,86 @@
+
+EARTHQUAKE GROUND-MOTION PREDICTION — METHODOLOGY
+
+1. DATA
+-------
+USGS ShakeMap ground-motion observations were assembled for 40 earthquake
+events. The final modeling dataset contains approximately 2.87 million
+observations.
+
+Target:
+    log(PGA)
+
+The dataset contains earthquake source parameters, observation/grid
+coordinates, distance measures, and site-condition information including
+Vs30.
+
+2. DATA SPLITTING
+-----------------
+The dataset was split at the earthquake/event level rather than randomly
+at the observation level.
+
+Training:
+    28 earthquakes
+
+Validation:
+    6 earthquakes
+
+Final test:
+    6 completely unseen earthquakes
+
+This prevents observations from the same earthquake appearing in both
+training and evaluation sets.
+
+3. SITE CONDITIONS
+------------------
+Global USGS Vs30 data were integrated with the ShakeMap observations.
+
+Vs30 values were cleaned and transformed using:
+    - Vs30_clean
+    - log_Vs30
+    - Vs30 availability indicator
+
+4. FEATURE ENGINEERING
+----------------------
+Features include:
+
+    - earthquake magnitude
+    - earthquake depth
+    - epicentral distance
+    - hypocentral distance
+    - log distance
+    - magnitude squared
+    - magnitude-distance interaction
+    - depth-distance interaction
+    - Vs30
+    - log Vs30
+    - geographic coordinates
+
+5. MODELS
+---------
+Classical machine-learning models:
+    - Linear Regression
+    - Ridge Regression
+    - Elastic Net
+    - Random Forest
+    - LightGBM
+    - XGBoost
+
+Deep-learning model:
+    - PyTorch multilayer perceptron (MLP)
+
+6. VALIDATION
+-------------
+Earthquake-grouped 5-fold cross-validation was used during model
+development to evaluate generalization to unseen earthquake events.
+
+7. FINAL EVALUATION
+-------------------
+After model development, the final MLP was evaluated on six earthquakes
+that were kept completely separate from model development.
+
+8. INTERPRETABILITY
+-------------------
+Permutation feature importance and model-response analysis were used to
+investigate the role of earthquake depth, distance, magnitude, Vs30,
+and geographic variables.
